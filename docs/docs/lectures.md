@@ -16,5 +16,5 @@ Lecture slides are provided below:
     - To save as a PDF file, please click the download link, then print the page.
     - To see all the slides and choose one, you can hit `ESC` on your keyboard to get an overview of the slides.
 
-2. [Lecture 2](https://docs.google.com/presentation/d/1-JIhgXuBowfZhHiSf_sruf2iTUIJHRBZ/edit?usp=sharing&ouid=117025573451423217663&rtpof=true&sd=true)
+2. [Lecture 2 & 3](https://docs.google.com/presentation/d/1-JIhgXuBowfZhHiSf_sruf2iTUIJHRBZ/edit?usp=sharing&ouid=117025573451423217663&rtpof=true&sd=true)
 

@@ -53,7 +53,7 @@ Happy with your research, you set off starting to build a French Republican Alar
 
 ## Instructions
 
-{: .hightlight-title}
+{: .highlight-title}
 > Lab Report
 > 
 > **Question 4:** Clearly, the time standards are different across the Western Calendar and the French Revolutionary Calendar.

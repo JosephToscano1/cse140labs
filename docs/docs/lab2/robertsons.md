@@ -50,7 +50,7 @@ Figure 1 below illustrates this optimized data flow in the accumulator/multiplie
 {: .text-delta}
 Accumulator Cannibalization of Multiplier Register
 
-![](../../../assets/lab2/figure1.png)
+![](../../assets/lab2/figure1.png)
 
 In the process of cannibalization of the multiplier, one can see that a $(2n-1)$-bit partial sum storage has inherited an extra bit from the cannibalized multiplier, thus growing into a $2n$ bit accumulator.
 This is just as well, since true n-bit two's complement numbers actually lie in the range of $[-2^{(n-1)}, 2^{(n-1)})$ whose product will produce results in the range $(-2^{(2n-2)}, 2^{(2n-2)}]$.
@@ -67,3 +67,5 @@ To preclude this overflow possibility, we will start you off in this exercise wi
 At the inputs of the adder, we will need to replicate the most significant $n$th bit and connect to the $(n+1)$th bit position, effectively performing a sign extension at the input space.
 
 ## Resources
+
+1. [Robertson's Algorithm Example](https://www.youtube.com/watch?v=U62iP8RkZIk&pp=ygUjcm9iZXJ0c29uIG11bHRpcGxpY2F0aW9uIGFsZ29yaXRobSA%3D)

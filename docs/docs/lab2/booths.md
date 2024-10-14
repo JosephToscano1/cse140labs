@@ -86,4 +86,6 @@ Considering the logic in this way will help with your implementation.
 
 ## Resources
 
-1. To be posted
+1. [Multiplication & Division Handout](../../assets/lab2/MultDiv_Fall24.pdf)
+2. [Booth's Multiplication Example](https://www.youtube.com/watch?v=QFXaddi-Ag8&t=770s&pp=ygUVYm9vdGhzIG11bHRpcGxpY2F0aW9u)
+3. [Concept of Booth's Algorithm](https://www.youtube.com/watch?v=meSn0UXmgac&pp=ygUVYm9vdGhzIG11bHRpcGxpY2F0aW9u)
