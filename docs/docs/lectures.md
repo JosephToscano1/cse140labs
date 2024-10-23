@@ -18,3 +18,4 @@ Lecture slides are provided below:
 
 2. [Lecture 2 & 3](https://docs.google.com/presentation/d/1-JIhgXuBowfZhHiSf_sruf2iTUIJHRBZ/edit?usp=sharing&ouid=117025573451423217663&rtpof=true&sd=true)
 
+3. [Lecture 4](https://docs.google.com/presentation/d/11c6_BuW94viVkY2xrSv2KoAVQPshkCrW/edit?usp=sharing&ouid=113086848396961671481&rtpof=true&sd=true)

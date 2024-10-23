@@ -1,7 +1,7 @@
 ---
 title: Lab 3
 layout: katex
-nav_order: 4
+nav_order: 5
 ---
 
 # Error Detection/Correction and Constant-3 Adder/Subtractor
