@@ -8,6 +8,9 @@ nav_order: 1
 # Error Detection/Correction Circuit
 {: .no_toc}
 
+{: .warning}
+Circuit structure is still a work in progress. Please come back on Friday.
+
 ## Contents
 {: .no_toc .text-delta}
 
@@ -125,9 +128,9 @@ Examples:
 
 Besides the value embedding property and the two invariants, these codewords also exhibit two other properties.
 A quick comparison of the two codewords on each row of the codeword table should convince you that the codewords have a **complementation** property;
-given a codeword with a value \( v \), by flipping its every bit, we can get its complement codeword (with a value of \( -(v+1) \)).
+given a codeword with a value $$ v $$ by flipping its every bit, we can get its complement codeword (with a value of $$ -(v+1) $$).
 
-A moment’s reflection should also convince you that each codeword additionally has a **mirror image** property. Basically, within a codeword, the bit with index \( i \) (where \( 1 \leq i \leq 12 \)) is always identical to the bit with index \( 13 - i \).
+A moment’s reflection should also convince you that each codeword additionally has a **mirror image** property. Basically, within a codeword, the bit with index $$ i $$ (where $$ 1 \leq i \leq 12 $$) is always identical to the bit with index $$ 13 - i $$.
 
 
 ## Computing Invariants in Booth’s, Deciphering Codeword Values
@@ -159,12 +162,13 @@ Let’s examine several examples first (in the examples below, the “\|” indi
 - **Sequence:** `0 1 1 1 | 0`  
   **Indices:** `+4 -1`
 
-Essentially, these examples indicate that for a sequence of consecutive 1’s, subtracting the index of the rightmost ‘1’ and adding the index of the ‘0’ at the left-hand side of the sequence gives the total number of 1’s in that sequence.  
+Essentially, these examples indicate that for a sequence of consecutive 1’s, 
+subtracting the index of the rightmost ‘1’ and adding the index of the ‘0’ at the left-hand side of the sequence gives the total number of 1’s in that sequence.
 Therefore, the number of 1’s in a codeword can be easily calculated by the following algorithm:
 
-***1s Count:*** Starting from the rightmost bit, we examine 2 bits at a time, bit $i$ and the bit immediately to its right.  
-We perform a subtraction of the index $i$ if $C_i C_{i-1} = 10$, and an addition of the index $i$ if $C_i C_{i-1} = 01$.  
-No operations are performed for $C_i C_{i-1} = 00$ or $C_i C_{i-1} = 11$.  
+***1s Count:*** Starting from the rightmost bit, we examine 2 bits at a time, bit $i$ and the bit immediately to its right.
+We perform a subtraction of the index $i$ if $C_i C_{i-1} = 10$, and an addition of the index $i$ if $C_i C_{i-1} = 01$.
+No operations are performed for $C_i C_{i-1} = 00$ or $C_i C_{i-1} = 11$. 
 This is illustrated in the following table:
 
 #### Invariant #1 Operations
@@ -176,9 +180,9 @@ This is illustrated in the following table:
 | 10             | Subtract Index $i$|
 | 11             | --               |
 
-Obviously, this algorithm needs a pair of ‘01’ and ‘10’ to identify a sequence of consecutive 1’s, implying that it can only correctly calculate the number of 1’s in a codeword if the string of 1’s is bracketed by a ‘0’.  
-Therefore, in addition to the one ‘0’ we insert at the right end (this one you are already familiar with from your implementation in Lab 2 of Booth’s multiplication) we add another ‘0’ at the beginning (this part is new) of each codeword, resulting in the codeword bloating to `0xxxxxxxxxxxx0`, where `xxxxxxxxxxxx` is the original 12-bit codeword.  
-Recall that our Booth’s multiplier of Lab 2 operated on 13-bit numbers and our codewords here are 12 bits long, so the requisite space has already been planned for and is available for the new ‘0’ needed at the left end of the codeword.  
+Obviously, this algorithm needs a pair of ‘01’ and ‘10’ to identify a sequence of consecutive 1’s, implying that it can only correctly calculate the number of 1’s in a codeword if the string of 1’s is bracketed by a ‘0’.
+Therefore, in addition to the one ‘0’ we insert at the right end (this one you are already familiar with from your implementation in Lab 2 of Booth’s multiplication) we add another ‘0’ at the beginning (this part is new) of each codeword, resulting in the codeword bloating to `0xxxxxxxxxxxx0`, where `xxxxxxxxxxxx` is the original 12-bit codeword.
+Recall that our Booth’s multiplier of Lab 2 operated on 13-bit numbers and our codewords here are 12 bits long, so the requisite space has already been planned for and is available for the new ‘0’ needed at the left end of the codeword.
 (Note that this modification keeps the number of 1’s constant.)
 
 <div style="border: 1px solid black; padding: 10px; flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
@@ -232,7 +236,7 @@ However, we may be able to utilize the second bit, $C_i C_{i-1}$, and convert th
 If you look back at the operations of invariant #1, you’ll notice that additions and subtractions were performed for $C_i C_{i-1}$ values of 01 and 10, with the operation delivering a sum that is the inverse of what the corresponding operations in the table above would deliver. 
 As a result, if we simply add on the negation of the result we got when calculating invariant #1 and skip these two operations in the table above, the result we obtain would be identical to the one we would get, had we completed the operations of rows $C_i C_{i-1} = 01$ and 10 of Table 3! 
 We already know that the result of invariant #1 should be ‘6’.
-We can avoid having to redo the operations for $C_i C_{i-1} = 01$ and 10 during the computation of invariant #2 because we already know the result of those two operations (it is the negation of the result of invariant #1, that is, ‘-6’). 
+We can avoid having to redo the operations for $C_i C_{i-1} = 01$ and $$10$$ during the computation of invariant #2 because we already know the result of those two operations (it is the negation of the result of invariant #1, that is, ‘-6’). 
 Our updated table of operations for this new “degraded” algorithm with fewer operations to execute is shown in the table below:
 
 #### “Degraded” Invariant #2 Operations
@@ -267,7 +271,7 @@ To summarize, the operations to be performed for checking both invariants are li
 
 | $C_i C_{i-1}$  | Operation        |
 |:--------------:|:----------------:|
-| $C_i C_{i-1} = 00$                 | No-op                         |
+| 00                                 | No-op                         |
 | 01                                 | Add $i$ (index of $C_i$)       |
 | 10                                 | Subtract $i$ (index of $C_i$)  |
 | 11                                 | No-op                         |
@@ -277,7 +281,7 @@ To summarize, the operations to be performed for checking both invariants are li
 
 | $C_i C_{i-1}$  | Operation        |
 |:--------------:|:----------------:|
-| $C_i C_{i-1} = 00$                 | Subtract $i$ (index of $C_i$)  |
+| 00                                 | Subtract $i$ (index of $C_i$)  |
 | 01                                 | No-op                         |
 | 10                                 | No-op                         |
 | 11                                 | Add $i$ (index of $C_i$)       |
@@ -459,18 +463,18 @@ Your starting point is the multiplier circuit in Lab 2.
 Your modification of the circuit could be based on the following guidance.
 
 1. Lab 2 components that will still be used in this design
-You can use the 13-bit **multiplier** register in your Lab 2 implementation to store the 12-bit codeword and the extra 0 at the beginning.
+- You can use the 13-bit **multiplier** register in your Lab 2 implementation to store the 12-bit codeword and the extra 0 at the beginning.
 The extra 0 at the end can be stored in the flip-flop **F**.
 The **accumulator** register will still be used to store the partial sum of your error detection computation. 
 The **Adder/Subtractor** you have developed for Lab 2 is still needed to perform addition/subtraction during error detection/correction.
 The **controller** in Lab 2 will be used as the datapath-controller in this design.
 
 2. Lab 2 components that will be replaced in this design
-The **multiplicand** register in the design of Lab 2 will be replaced by a **counter** as we need to increment our indices by 1 as we traverse through each bit of our codeword.
+- The **multiplicand** register in the design of Lab 2 will be replaced by a **counter** as we need to increment our indices by 1 as we traverse through each bit of our codeword.
 As the lowest bit position of our original codeword is denoted as 1, this counter should start counting from 1. 
-As we only need to count from 1 up to 13, a **4-bit counter** provided in the LogicWorks standard library would suffice.
+As we only need to count from 1 up to 13, a **4-bit counter** provided in the Digital standard library would suffice.
 
-3. New components that we will provide to you
+3. New components that we will provide to you:
 - A **16-bit decoder** to be used in the design of error correction logic.
 - A **SuperController** to be used for controlling the three-phase operation by indicating the start and the end of each phase.  
   Within each phase, the operation of the circuit is actually controlled by the datapath controller (which is identical to the controller used in Lab 2). 
@@ -478,7 +482,7 @@ As we only need to count from 1 up to 13, a **4-bit counter** provided in the Lo
 - A **13-bit comparator** to be used for comparing the calculated value with the expected value.
 - A **2-to-1 multiplexer, MUX-2x13**, which receives two groups of 13-bit inputs and selects one to output depending on the selection signal **S**.
 
-4. New components that you need to design and insert into the circuit
+4. New components that you need to design and insert into the circuit:
 - You are asked to design the **Error Detection** logic which should output a 1 if an error is detected in either the first or the second phase.
 - You also need to design the **Error Correction** logic which corrects the input word based on the value in **A** at the end of the second phase.
 
@@ -571,7 +575,7 @@ Your circuit should display the following results:
 - The embedded value calculated in Phase 3;
 - Buzzer signals showing the result of error detection in Phases 1-2 (on binary probes).
 
-## Lab Report
+## Lab Report Questions
 
 You should submit a report explaining how you designed the error detection/correction components of your circuit.
 You also need to provide explanations for the error detection and correction capabilities of your circuit, specifically, by examining the following cases and observing the output of your circuit:
