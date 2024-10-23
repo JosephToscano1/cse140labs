@@ -9,7 +9,7 @@ nav_order: 2
 {: .no_toc}
 
 {: .warning}
-Circuit structure is still a work in progress. Please come back on Friday.
+Circuit structure is still a work in progress. Please check back on Friday.
 
 ## Contents
 {: .no_toc .text-delta}
@@ -151,6 +151,32 @@ Similarly, you can perform Boolean transformations to simplify the Boolean expre
 
 For full credit in this part of the exercise, your correction circuitry (adder/subtractor) must be constructed with inverters and **two-input** basic logic gates only, in the most concise form. Other implementations for this component (e.g., directly using the adder component in Digital library, or using logic gates with more than two inputs) would result in some penalty in your final grade.
 
+### Construction (4-digit 2421 adder)
+
+You can now construct a single-digit adder for the 2421 representation by connecting a 4-bit binary adder component from the Digital library and the newly designed constant-6 adder/subtractor. 
+Now, the only remaining task is to grow it so it can handle addition operations on numbers composed of 4 decimal digits. 
+You have likely realized that the generalization to 4 digits could be accomplished by replicating a single-digit 2421 adder 4 times. 
+Most of the rest should be rather straightforward and consists of hooking appropriately the interfaces corresponding to each digit.
+
+As a good design practice, you should first create a single-digit 2421 adder component in Digital, then instantiate these in your circuit file to build a 4-digit 2421 adder.
+Finally, please use the input in the circuit to enter the 4-digit 2421 inputs and output the addition result.
+
+We will leave some interface questions for you to figure out, such as how the modules need to be connected and how the carry-in signal from the previous digit could be taken into consideration in the subtraction operation. 
+One important question as you hook up the digits together that we would like you to ponder is the question of the carry signal between the digits. 
+As you know, at this point each digit is possibly producing two digit carry-outs: one from the binary addition and the other the carry-out of the correction step. 
+One question that you should be pondering is which of these two carries is actually the right one to drive the addition of the next digit. 
+Please make sure that you hook these correctly and provide us a report in the deliverables detailing your understanding as to which of these could be used for driving the next digit.
+If you decide neither should, please provide an alternate carry to drive the next digit operation. 
+If you decide either will do the job, please provide a discussion as to which may be preferable.
+In the case of only one, please provide a rationale for your selection and identify which one is your favorite.
+
+You can try your design on the following two test cases.
+Please also come up with a few additional test cases to check the correctness of your design.
+
+| **Input A** | **Input B** | **Result (A+B)** |
+|:----------:|:-----------:|:----------------:|
+| 1BD2       | BC1F        | D1F1             |
+| 3BE1       | 14C3        | B044             |
 
 ## Lab Report Questions
 Your report should present the simplified Boolean expression for the detection logic. You should also explain how you generate the P signal for the correction circuitry (adder/subtractor). If you are using the optimized design for the correction circuitry, your report should also present the simplified Boolean expressions for Z1, R2, Z2, R3 and Z3. Note that these equations should be consistent with the circuit implemented in your Digital design file.

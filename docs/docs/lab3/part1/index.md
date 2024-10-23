@@ -566,14 +566,14 @@ To eliminate this last bit of the absolute value result, a somewhat less invasiv
 The recorded register value after the 7th step of Phase 3 needs to be divided by two for computing the embedded value.
 This operation can be implemented simply by dropping the least significant bit, as just discussed in the error correction part of Phase 2.
 
-### Items to be Displayed:
-Your circuit should display the following results:
-- The input word (input with 3 hex keyboards and show on 3 hex displays);
-- The result of the first calculation (the number of 1’s);
-- The result of the second phase calculation (index summation);
-- The corrected codeword in Phase 2 (on 3 hex displays);
-- The embedded value calculated in Phase 3;
-- Buzzer signals showing the result of error detection in Phases 1-2 (on binary probes).
+<!-- ### Items to be Displayed: -->
+<!-- Your circuit should display the following results: -->
+<!-- - The input word -->
+<!-- - The result of the first calculation (the number of 1’s); -->
+<!-- - The result of the second phase calculation (index summation); -->
+<!-- - The corrected codeword in Phase 2; -->
+<!-- - The embedded value calculated in Phase 3; -->
+<!-- - Buzzer signals showing the result of error detection in Phases 1-2 (on binary probes). -->
 
 ## Lab Report Questions
 
