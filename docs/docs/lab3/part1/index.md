@@ -33,13 +33,13 @@ The following ports should be opened for `Lab3Part1`:
 
 | Port Direction | Port Name       | Active | Port Width (bits) | Description                                                             |
 |:--------------:|-----------------|:------:|------------------:|-------------------------------------------------------------------------|
-|      INPUT     | `CLK`           | Rising |                 1 | Clock input used for controlling the multiplier                         |
-|      INPUT     | `CLR`           |  High  |                 1 | Clears the multiplier to allow it for later reuse                       |
-|      INPUT     | `CODEWORD`      |    -   |                12 | 13-bit signed decimal input as multiplier                               |
-|      INPUT     | `PHASE_1`       |    -   |                13 | 13-bit signal decimal input as multiplicand                             |
-|     OUTPUT     | `RESULT`        |    -   |                26 | 26-bit signed decimal output as a result from your multiplication       |
-|     OUTPUT     | `OP_DONE`       |    -   |                 2 | The operation you have performed (addition, subtraction, or no-op)      |
-|     OUTPUT     | `DONE`          |  High  |                 1 | Set high when you have finished the multiplication                      |
+|      INPUT     | `CLK`           | Rising |                 1 | Clock input used for controlling the error detector                     |
+|      INPUT     | `CLR`           |  High  |                 1 | Clears the error detector to allow it for later reuse                   |
+|      INPUT     | `CODEWORD`      |    -   |                13 | Codeword with some injected error to decode                             |
+|     OUTPUT     | `PHASE`         |    -   |                 2 | Signal to denote which phase of the process you're in                   |
+|     OUTPUT     | `RESULT`        |    -   |                13 | Error corrected codeword that we provide                                |
+|     OUTPUT     | `EMBEDDED_VALUE`|    -   |                 2 | The embedded value calculated based on the phase                        |
+|     OUTPUT     | `DONE`          |  High  |                 1 | Set high when you are done calculating the `RESULT`                     |
 
 ## Background
 Physical failures of digital systems can lead to errors during data transmission. Often times there
@@ -60,7 +60,7 @@ other interesting properties as well.
 
 ### Error detection/correction codewords
 
-| Positive Number |     Codeword     | Negative Number |  Corrected Codeword   |
+| Positive Number |     Codeword     | Negative Number |  Codeword             |
 |:---------------:|:----------------:|:---------------:|:---------------------:|
 |        0        | `010110011010`   |       -1        |   `101001100101`      |
 |        1        | `001110011100`   |       -2        |   `110001100011`      |
