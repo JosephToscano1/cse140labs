@@ -3,45 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="color-scheme" content="dark" />
-    <link rel="stylesheet" href="styles/pico.jade.min.css" />
-    <link rel="stylesheet" href="styles/style.css" />
+    <meta name="color-scheme" content="dark"/>
+    <link rel="stylesheet" href="styles/pico.jade.min.css"/>
+    <link rel="stylesheet" href="styles/style.css"/>
     <title>CSE 140L Alarm Clock</title>
-    <script async type="text/javascript" src="scripts/wasm/ConventionalAlarmClock.js"></script>
 </head>
 <body>
-    <main class="container">
-        <h1>Digital Alarm Clock</h1>
-        <h2>CSE 140L: Project 1</h2>
-        <div id="clock">
-            <svg width="0" height="0" viewBox="0 0 0 0">
-                <defs>
-                    <g id="unit-h">
-                        <path d="M0 20 L20 40 L180 40 L200 20 L180 0 L20 0 Z"></path>
-                    </g>
-                    <g id="unit-v">
-                        <path d="M20 0 L0 20 L0 180 L20 200 L40 180 L40 20 Z"></path>
-                    </g>
-                </defs>
-            </svg>
-        </div>
-        <article>
-            <div role="group">
-                <button id="setup-time-switch" class="outline" onclick="toggleSetupTime()">Enter Time Setup</button>
-                <button id="setup-alarm-switch" class="outline" onclick="toggleSetupAlarm()">Enter Alarm Setup</button>
-                <button id="adv-min-button" class="contrast" disabled onclick="advanceMinute()">Advance Minute</button>
-                <button id="adv-hr-button" class="contrast" disabled onclick="advanceHour()">Advance Hour</button>
-            </div>
-            <label>
-                Number of Increments
-                <input id="num-increment" type="number" name="number" placeholder="Number of Increments" value="1">
-            </label>
-            <label>
-                Update Interval
-                <input id="update-interval" type="number" name="number" placeholder="Time (in ms)" value="1000" onchange="updateInterval()">
-            </label>
-        </article>
-    </main>
+<main class="container" id="content">
+    <h1>Select a Simulator:</h1>
+    <div role="group">
+        <a href="alarm_part1.html"><div role="button" class="outline">Alarm Clock (Part 1)</div></a>
+        <a href="alarm_part2.html"><div role="button" class="outline">Alarm Clock (Part 2)</div></a>
+        <a href="calendar.html"><div role="button" class="outline">Calendar (Part 3)</div></a>
+
+    </div>
     <script src="scripts/main.js"></script>
+</main>
 </body>
 </html>

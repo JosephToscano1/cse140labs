@@ -17,9 +17,6 @@ auto* controller = new VFrenchRepublicanCalendarAlarmClock;
 
 #endif
 
-#define FIRST_SEGMENT_MASK 0x7f
-#define SECOND_SEGMENT_MASK 0x3f80
-
 extern "C" {
   void EMSCRIPTEN_KEEPALIVE clk() {
     controller->CLK = 0;
@@ -38,19 +35,23 @@ extern "C" {
   int EMSCRIPTEN_KEEPALIVE get_seven_segment_output(int digit) {
     switch (digit) {
         case 0:
-          return controller->SEG_SECONDS & FIRST_SEGMENT_MASK;
+            return controller->SEG_SECONDS;
         case 1:
-          return (controller->SEG_SECONDS & SECOND_SEGMENT_MASK) >> 7;
+            return controller->SEG_MINUTES;
         case 2:
-          return controller->SEG_MINUTES & FIRST_SEGMENT_MASK;
+            return controller->SEG_HOURS;
+#if defined(PART3)
         case 3:
-          return (controller->SEG_MINUTES & SECOND_SEGMENT_MASK) >> 7;
+            return controller->SEG_DAYS;
         case 4:
-          return controller->SEG_HOURS & FIRST_SEGMENT_MASK;
+            return controller->SEG_WEEKS;
         case 5:
-          return (controller->SEG_HOURS & SECOND_SEGMENT_MASK) >> 7;
+            return controller->SEG_MONTHS;
+        case 6:
+            return controller->SEG_YEARS;
+#endif
         default:
-          return controller->SEG_SECONDS;
+            return controller->SEG_SECONDS;
     }
   }
 
@@ -91,24 +92,28 @@ extern "C" {
 
 #if defined(PART3)
   void EMSCRIPTEN_KEEPALIVE advance_day() {
-    controller->HR_ADV = 1;
+    controller->DAY_ADV = 1;
     controller->eval();
-    controller->HR_ADV = 0;
-    controller->eval();
-  }
-
-  void EMSCRIPTEN_KEEPALIVE advance_hour() {
-    controller->HR_ADV = 1;
-    controller->eval();
-    controller->HR_ADV = 0;
+    controller->DAY_ADV = 0;
     controller->eval();
   }
 
-  void EMSCRIPTEN_KEEPALIVE advance_minute() {
-    controller->HR_ADV = 1;
+  void EMSCRIPTEN_KEEPALIVE advance_week() {
+    controller->WEEK_ADV = 1;
     controller->eval();
-    controller->HR_ADV = 0;
+    controller->WEEK_ADV = 0;
+    controller->eval();
+  }
+
+  void EMSCRIPTEN_KEEPALIVE advance_month() {
+    controller->MONTH_ADV = 1;
+    controller->eval();
+    controller->MONTH_ADV = 0;
     controller->eval();
   }
 #endif // defined(PART3)
+
+  int EMSCRIPTEN_KEEPALIVE get_buzzer() {
+    return controller->BUZZ;
+  }
 }

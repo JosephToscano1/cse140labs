@@ -1,3 +1,7 @@
 **/verilog
 **/schematics/lib
 **/*_dir
+**/sim_build
+**/results.json
+**/__pycache__
+**/.pytest_cache

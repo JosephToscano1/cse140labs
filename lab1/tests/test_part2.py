@@ -14,11 +14,11 @@ async def check_setup(dut):
 async def check_clr(dut):
     dut.SETUP_TIME.value = 1 #enter time setup mode
     dut.SETUP_ALARM.value = 0
-    await increment_min_hr(dut, 1, 1, 1, 1, 1)
+    await increment_min_hr(dut, 1, 1)
 
     dut.SETUP_TIME.value = 0 #enter alarm setup mode
     dut.SETUP_ALARM.value = 1
-    await increment_min_hr(dut, 1, 1, 1, 1, 1)
+    await increment_min_hr(dut, 1, 1)
 
     dut.SETUP_TIME.value = 0
     dut.SETUP_ALARM.value = 0

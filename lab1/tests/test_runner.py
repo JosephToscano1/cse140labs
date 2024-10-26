@@ -24,9 +24,9 @@ def test_part1():
         p1.pass_one_minute
     ]
 
-    for element in test_cases.items():
+    for element in test_cases:
         try:
-            runner.test(hdl_toplevel=top_level, test_module=test_part3.__name__, testcase=element.__name__)
+            runner.test(hdl_toplevel=top_level, test_module=p1.__name__, testcase=element.__name__)
         except:
             print("FAILED")
 
@@ -41,9 +41,9 @@ def test_part2():
         p2.pass_one_minute
     ]
 
-    for element in test_cases.items():
+    for element in test_cases:
         try:
-            runner.test(hdl_toplevel=top_level, test_module=test_part3.__name__, testcase=element.__name__)
+            runner.test(hdl_toplevel=top_level, test_module=p2.__name__, testcase=element.__name__)
         except:
             print("FAILED")
 
@@ -58,8 +58,8 @@ def test_part3():
         p3.pass_one_minute
     ]
 
-    for element in test_cases.items():
+    for element in test_cases:
         try:
-            runner.test(hdl_toplevel=top_level, test_module=test_part3.__name__, testcase=element.__name__)
+            runner.test(hdl_toplevel=top_level, test_module=p3.__name__, testcase=element.__name__)
         except:
             print("FAILED")

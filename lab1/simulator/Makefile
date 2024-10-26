@@ -11,20 +11,32 @@ OUTPUT_DIR        = ./scripts/wasm
 
 VERILATOR_CONFIG  = ../verilog/verilator_config
 
-PART ?= $(error SELECT PART TO COMPILE)
 PORT ?= 8000
+TOPLEVEL_FILE = ../top_level.txt
 
-TOPLEVEL = $(shell sed -n '$(PART)p' < ../top_level.txt)
+MODELS = $(shell cat $(TOPLEVEL_FILE))
 
-wasm: $(OUTPUT_DIR)/$(TOPLEVEL).js
+define get-part-number
+$(shell awk '/$(1)/{ print NR; exit }' $(TOPLEVEL_FILE))
+endef
 
-$(TOPLEVEL)_dir: ../verilog/
-	$(VERILATOR_EXE) --Mdir $(TOPLEVEL)_dir --cc --public ../verilog/$(TOPLEVEL).v $(VERILATOR_CONFIG)
-	$(EMMAKE) make -C $(TOPLEVEL)_dir -f V$(TOPLEVEL).mk
+define make-toplevel-target
 
-$(OUTPUT_DIR)/$(TOPLEVEL).js: $(TOPLEVEL)_dir wasm.cpp
+$(1)_dir/: ../verilog/
+	$(VERILATOR_EXE) --Mdir $(1)_dir --cc --public ../verilog/$(1).v $(VERILATOR_CONFIG)
+	$(EMMAKE) make -C $(1)_dir -f V$(1).mk
+
+$(OUTPUT_DIR)/$(1).js: $(1)_dir/ wasm.cpp
 	mkdir -p $(OUTPUT_DIR)
-	$(EMCXX) -O3 -I$(TOPLEVEL)_dir -I$(VERILATOR_ROOT)/include -DPART$(PART) wasm.cpp $(TOPLEVEL)_dir/*.o -o $(OUTPUT_DIR)/$(TOPLEVEL).js
+	$(EMCXX) -O3 -I$(1)_dir -I$(VERILATOR_ROOT)/include -DPART$(2) wasm.cpp $(1)_dir/*.o -o $(OUTPUT_DIR)/$(1).js
+
+build_$(2): $(OUTPUT_DIR)/$(1).js
+
+endef
+
+$(foreach model,$(MODELS),$(eval $(call make-toplevel-target,$(model),$(call get-part-number,$(model)))))
+
+wasm: $(addprefix $(OUTPUT_DIR)/,$(addsuffix .js,$(MODELS)))
 
 simulate: wasm
 	python3 -m http.server $(PORT)
