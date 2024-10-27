@@ -35,10 +35,13 @@ The following ports should be opened for `Lab3Part1`:
 |:--------------:|-----------------|:------:|------------------:|-------------------------------------------------------------------------|
 |      INPUT     | `CLK`           | Rising |                 1 | Clock input used for controlling the error detector                     |
 |      INPUT     | `CLR`           |  High  |                 1 | Clears the error detector to allow it for later reuse                   |
+|      INPUT     | `BEGIN`         |  Low   |                 1 | Signal to start three-phase algorithm                                   |
 |      INPUT     | `CODEWORD`      |    -   |                13 | Codeword with some injected error to decode                             |
 |     OUTPUT     | `PHASE`         |    -   |                 2 | Signal to denote which phase of the process you're in                   |
 |     OUTPUT     | `RESULT`        |    -   |                13 | Error corrected codeword that we provide                                |
 |     OUTPUT     | `EMBEDDED_VALUE`|    -   |                 4 | The embedded value calculated based on the phase                        |
+|     OUTPUT     | `ERROR_ONE`     |    -   |                 1 | Set high if phase one error is detected                                 |
+|     OUTPUT     | `ERROR_TWO`     |    -   |                 1 | Set high if phase two error is detected                                 |
 |     OUTPUT     | `DONE`          |  High  |                 1 | Set high when you are done calculating the `RESULT`                     |
 
 ## Background
