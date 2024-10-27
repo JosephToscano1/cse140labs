@@ -38,7 +38,7 @@ The following ports should be opened for `Lab3Part1`:
 |      INPUT     | `CODEWORD`      |    -   |                13 | Codeword with some injected error to decode                             |
 |     OUTPUT     | `PHASE`         |    -   |                 2 | Signal to denote which phase of the process you're in                   |
 |     OUTPUT     | `RESULT`        |    -   |                13 | Error corrected codeword that we provide                                |
-|     OUTPUT     | `EMBEDDED_VALUE`|    -   |                 2 | The embedded value calculated based on the phase                        |
+|     OUTPUT     | `EMBEDDED_VALUE`|    -   |                 4 | The embedded value calculated based on the phase                        |
 |     OUTPUT     | `DONE`          |  High  |                 1 | Set high when you are done calculating the `RESULT`                     |
 
 ## Background
