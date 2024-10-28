@@ -478,12 +478,12 @@ As the lowest bit position of our original codeword is denoted as 1, this counte
 As we only need to count from 1 up to 13, a **4-bit counter** provided in the Digital standard library would suffice.
 
 3. New components that we will provide to you:
-- A **16-bit decoder** to be used in the design of error correction logic.
+- A **16-bit decoder** to be used in the design of error correction logic (in Digital library).
 - A **SuperController** to be used for controlling the three-phase operation by indicating the start and the end of each phase.  
   Within each phase, the operation of the circuit is actually controlled by the datapath controller (which is identical to the controller used in Lab 2). 
   You need to hook up the two controllers to let them operate correctly.
-- A **13-bit comparator** to be used for comparing the calculated value with the expected value.
-- A **2-to-1 multiplexer, MUX-2x13**, which receives two groups of 13-bit inputs and selects one to output depending on the selection signal **S**.
+- A **13-bit comparator** to be used for comparing the calculated value with the expected value (in Digital library).
+- A **2-to-1 multiplexer, MUX-2x13** (in Digital library), which receives two groups of 13-bit inputs and selects one to output depending on the selection signal **S**.
 
 4. New components that you need to design and insert into the circuit:
 - You are asked to design the **Error Detection** logic which should output a 1 if an error is detected in either the first or the second phase.
