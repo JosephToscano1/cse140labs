@@ -34,13 +34,10 @@ The following ports should be opened for the `Lab3Part2`:
 
 | Port Direction | Port Name       | Active | Port Width (bits) | Description                                                             |
 |:--------------:|-----------------|:------:|------------------:|-------------------------------------------------------------------------|
-|      INPUT     | `CLK`           | Rising |                 1 | Clock input used for controlling the multiplier                         |
-|      INPUT     | `CLR`           |  High  |                 1 | Clears the multiplier to allow it for later reuse                       |
-|      INPUT     | `MULTIPLIER`    |    -   |                13 | 13-bit signed decimal input as multiplier                               |
-|      INPUT     | `MULTIPLICAND`  |    -   |                13 | 13-bit signal decimal input as multiplicand                             |
-|     OUTPUT     | `RESULT`        |    -   |                26 | 26-bit signed decimal output as a result from your multiplication       |
-|     OUTPUT     | `OP_DONE`       |    -   |                 2 | The operation you have performed (addition, subtraction, or no-op)      |
-|     OUTPUT     | `DONE`          |  High  |                 1 | Set high when you have finished the multiplication                      |
+|      INPUT     | `OPERAND_ONE`   |    -   |                16 | First 4 decimal-digits as input during 2421 addition                    |
+|      INPUT     | `OPERAND_TWO`   |    -   |                16 | Second 4 decimal-digits as input during 2421 addition                   |
+|      OUTPUT    | `ERROR_FLAGS`   |    -   |                4  | Denotes P-signal for each of the 4 decimal-digits (format: P3P2P1P0)    |
+|      OUTPUT    | `SUM`           |    -   |                16 | 4 decimal-digit output as a result from your 2421 addition              |
 
 ## Theory
 
@@ -179,4 +176,4 @@ Please also come up with a few additional test cases to check the correctness of
 | 3BE1       | 14C3        | B044             |
 
 ## Lab Report Questions
-Your report should present the simplified Boolean expression for the detection logic. You should also explain how you generate the P signal for the correction circuitry (adder/subtractor). If you are using the optimized design for the correction circuitry, your report should also present the simplified Boolean expressions for Z1, R2, Z2, R3 and Z3. Note that these equations should be consistent with the circuit implemented in your Digital design file.
+Your report should present the simplified Boolean expression for the detection logic. You should also explain how you generate the P signal for the correction circuitry (adder/subtractor). Your report should also present the simplified Boolean expressions for Z1, R2, Z2, R3 and Z3 (from your optimized correction-circuit). Note that these equations should be consistent with the circuit implemented in your Digital design file.
