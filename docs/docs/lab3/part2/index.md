@@ -8,9 +8,6 @@ nav_order: 2
 # 2421 Adder
 {: .no_toc}
 
-{: .warning}
-Circuit structure is still a work in progress. Please check back on Friday.
-
 ## Contents
 {: .no_toc .text-delta}
 

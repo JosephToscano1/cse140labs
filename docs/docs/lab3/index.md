@@ -39,7 +39,6 @@ library. The combined circuit should deliver the difference of two excess-3 deci
 excess-3 representation which you will extend to subtract two 4 digit excess-3 numbers.
 
 ## Goals
-<!-- TODO: FIX THIS -->
 The goal of this lab is to teach you how to correct binary subtraction results for excess-3 numbers and 
 extend the solution to subtract multi-digit excess-3 numbers.
 The lab will be divided into 2 parts:
@@ -58,13 +57,13 @@ Please write a lab report that contains the following information:
 
 Please submit the following files to Gradescope **individually**:
 
-- `ErrorDetectionCorrectionCircuit.v`
-- `Constant-3AdderSubtractor.v`
+- `Lab3Part1.v`
+- `Lab3Part2.v`
 - All `.dig` files you have created 
 - PDF of your [lab report](#lab-report)
 
 ## Grading
 
-* [Part 1](https://cse140l.github.io/fa24-labs/docs/lab3/part1): 18%
-* [Part 2](https://cse140l.github.io/fa24-labs/docs/lab3/part2): 18%
+* [Part 1](https://cse140l.github.io/fa24-labs/docs/lab3/part1): 60%
+* [Part 2](https://cse140l.github.io/fa24-labs/docs/lab3/part2): 30%
 * [Lab Report](#lab-report): 10%

@@ -8,9 +8,6 @@ nav_order: 1
 # Error Detection/Correction Circuit
 {: .no_toc}
 
-{: .warning}
-Circuit structure is still a work in progress. Please come back on Friday.
-
 ## Contents
 {: .no_toc .text-delta}
 
