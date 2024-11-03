@@ -33,7 +33,7 @@ The following ports should be opened for the `Lab3Part2`:
 |:--------------:|-----------------|:------:|------------------:|-------------------------------------------------------------------------|
 |      INPUT     | `OPERAND_ONE`   |    -   |                16 | First 4 decimal-digits as input during 2421 addition                    |
 |      INPUT     | `OPERAND_TWO`   |    -   |                16 | Second 4 decimal-digits as input during 2421 addition                   |
-|      OUTPUT    | `ERROR_FLAGS`   |    -   |                4  | Denotes P-signal for each of the 4 decimal-digits (format: P3P2P1P0)    |
+|      OUTPUT    | `ERROR_FLAGS`   |    -   |                4  | Error flag for each of the 4 decimal-digits (format: E3E2E1E0)          |
 |      OUTPUT    | `SUM`           |    -   |                16 | 4 decimal-digit output as a result from your 2421 addition              |
 
 ## Theory
