@@ -19,7 +19,7 @@ nav_order: 2
 ## Introduction
 
 In the CLA half of the lab, you will be designing a carry look-ahead adder for 2421 numbers of 4 decimal digits.
-You will complete this part in four steps.
+You will complete this section in three parts.
 First, you will start by building a 4-bit CLA generator to precompute carries.
 Then you will create a fast 4-bit CLA adder by using the CLA generator designed in the first step.
 After the successful implementation of the 4-bit CLA adder, you will need to design a 16-bit CLA adder by reusing the 4-bit CLA adders and exploring two different approaches which will result in different timing and hardware complexity.

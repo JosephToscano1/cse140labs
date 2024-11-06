@@ -4,7 +4,7 @@ layout: katex
 nav_order: 5
 ---
 
-# Error Detection/Correction and Constant-3 Adder/Subtractor
+# Error Detection/Correction and 2421 Adder
 {: .no_toc}
 
 #### Assigned

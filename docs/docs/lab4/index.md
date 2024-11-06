@@ -28,8 +28,8 @@ November 18th, 2024
 
 ## Lore
 
-This lab assignment consists of two parts.
-In this first part, you will design and implement two versions of an excess-3 carry look-ahead adder, explore the carry look-ahead structure in this context, and then analyze and explore the timing paths through the separate versions.
+This lab assignment consists of two major sections.
+In this first part, you will design and implement two versions of an 2421 carry look-ahead adder, explore the carry look-ahead structure in this context, and then analyze and explore the timing paths through the separate versions.
 In the second part, you will perform static hazard analysis and focus on the implementation of hazard-free circuits.
 
 ## Goals
@@ -44,7 +44,7 @@ Additionally, we want to ensure that you can design a hazard-free circuit.
 Please write a lab report that contains the following information:
 - Your name(s) and PID(s)
 - Pictures of your final circuits for each part (including embedded circuits)
-- Answers to lab report questions (located on the bottom of each part)
+- Answers to lab report questions
 
 ## Deliverables
 
@@ -58,6 +58,8 @@ Please submit the following files to Gradescope **individually**:
 
 ## Grading
 
-* [Part 1](https://cse140l.github.io/fa24-labs/docs/lab4/part1): 60%
-* [Part 2](https://cse140l.github.io/fa24-labs/docs/lab4/part2): 30%
+* [Part 1](https://cse140l.github.io/fa24-labs/docs/lab4/part1): 20%
+* [Part 2](https://cse140l.github.io/fa24-labs/docs/lab4/part2): 20%
+* [Part 3](https://cse140l.github.io/fa24-labs/docs/lab4/part3): 30%
+* [Part 4](https://cse140l.github.io/fa24-labs/docs/lab4/part4): 20%
 * [Lab Report](#lab-report): 10%

@@ -62,8 +62,8 @@ Gate Delays
 | NAND           | $3 + n$             |
 | OR             | $5 + n$             |
 | NOR            | $3 + n$             |
-| XOR            | $7 + n$             |
-| XNOR           | $9 + n$             |
+| XOR            | $9 + n$             |
+| XNOR           | $7 + n$             |
 
 where $n = \text{number of inputs} - 2$.
 
