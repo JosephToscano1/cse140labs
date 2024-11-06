@@ -1,0 +1,59 @@
+# Please provide your answers as integers (don't use quotes)
+# To find the row you want to add the value to, please refer
+# to the delay table, and under "TOML Code", find the value
+# stored. The value before the period should correspond to
+# a value in between square brackets. For example, d1.a
+# corresponds to the line below.
+
+# For the first two tables, provide one integer, for the
+# remaining tables, provide an array of 2 integers.
+
+# For more info on TOML syntax, please refer to:
+# https://toml.io/en/v1.0.0
+
+[d1]
+a = 10 # This is d1.a
+b = 0
+c = 0
+d = 0
+
+[d2]
+a = 17
+b = 0
+c = 0
+d = 0
+
+# The first value corresponds to single-level
+# The second value corresponds to two-level
+
+[d3]
+a = [10, 10]
+b = [0, 0]
+c = [0, 0]
+d = [0, 0]
+e = [0, 0]
+f = [0, 0]
+g = [0, 0]
+h = [0, 0]
+
+[d4]
+a = [24, 24]
+b = [0, 0]
+c = [0, 0]
+d = [0, 0]
+e = [0, 0]
+f = [0, 0]
+g = [0, 0]
+h = [0, 0]
+
+[d5]
+a = [0, 0]
+b = [0, 0]
+c = [0, 0]
+d = [0, 0]
+
+[d6]
+a = [0, 0]
+b = [0, 0]
+c = [0, 0]
+d = [0, 0]
