@@ -1,7 +1,7 @@
 ---
 title: Lab 4
 layout: katex
-nav_order: 5
+nav_order: 6
 ---
 
 {: .warning}

@@ -21,8 +21,9 @@ nav_order: 4
 {: .warning}
 Failure to follow this structure can result in grading of the lab to be delayed or incorrect.
 
-Your main *Digital* circuit should be named as `2421CLA`.
-The following ports should be opened for `2421CLA`:
+This part of the lab requires four deliverables, `2421SingleLevelCLA`, `2421SingleLevelCLA_D`, `2421TwoLevelCLA`, `2421TwoLevelCLA_D`.
+The circuits without any suffix (i.e. without `_D`) are graded for functionality, and should only use components that can be exported to verilog (more on this in later sections).
+The following ports should be opened for all of the circuits:
 
 | Port Direction | Port Name       | Port Width (bits) | Description                                                             |
 |:--------------:|-----------------|------------------:|-------------------------------------------------------------------------|
