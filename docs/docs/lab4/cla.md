@@ -146,7 +146,7 @@ Propagate and Generate Functions generator block
 {: .note}
 For all figures, please treat all signals like `go` and `po` as `g` and `p` signals (ignore the `o` in the name).
 
-![](../../../assets/lab4/fig1.png)
+![](../../assets/lab4/fig1.png)
 
 You will notice that these generate and propagate expressions are already a part of the alternative full adder equations, thus enabling you to express the alternative full adder equations in terms of these functions easily:
 
@@ -176,7 +176,7 @@ This block also outputs two more outputs, $G_{3,0}$ and $P_{3,0}$, which corresp
 {: .text-delta}
 Look Ahead block
 
-![](../../../assets/lab4/fig2.png)
+![](../../assets/lab4/fig2.png)
 
 
 ## Notes
