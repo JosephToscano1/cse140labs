@@ -50,9 +50,14 @@ Please write a lab report that contains the following information:
 
 Please submit the following files to Gradescope **individually**:
 
-- `Lab4Part1.dig`
+- `SingleLevelCLA.dig`
+- `TwoLevelCLA.dig`
+- `2421SingleLevelCLA.dig`
+- `2421SingleLevelCLA_D.dig`
+- `2421TwoLevelCLA.dig`
+- `2421TwoLevelCLA_D.dig`
 - `delayed_tables.toml`
-- `Lab4Part2.dig`
+- `HazardFree.dig`
 - All `.dig` files you have created 
 - PDF of your [lab report](#lab-report)
 

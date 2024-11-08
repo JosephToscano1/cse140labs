@@ -18,7 +18,7 @@ nav_order: 1
 ---
 
 {: .note}
-Please do not forget to use the **alternative CLA equations you derived** in the [theory section](https://cse140l.github.io/fa24-labs/lab4/cla) for this and the rest of the remaining parts.
+Please do not forget to use the **alternative CLA equations you derived** in the [theory section](https://cse140l.github.io/fa24-labs/docs/lab4/cla) for this and the rest of the remaining parts.
 
 ## Creating a 16-Bit CLA
 
