@@ -17,6 +17,26 @@ nav_order: 3
 
 ---
 
+## `Corrector`
+
+### Ports 
+
+The ports of the module are provided below with a description:
+
+| Port Direction | Port Name       | Port Width (bits) | Description                                |
+|:--------------:|-----------------|------------------:|--------------------------------------------|
+|      INPUT     | `SUM`           |                 4 | 4-bit sum                                  |
+|      INPUT     | `SEL`           |                 1 | Subtracts if `SEL == 1`, adds otherwise    |
+|     OUTPUT     | `OUT`           |                 4 | Value after performing the correction step |
+
+### Explanation
+
+This logic should be familiar for you as you did this for Lab 3.
+We provide a component here for you to use, but you are more than welcome to use your own.
+The corrector detects whether or not a correction is required, and if so then only does it perform the correction step (add or subtract 6), otherwise the `SUM` is passed to the `OUT`.
+
+When calculating performance, please use the delayed version of the corrector we have provided, or use the delayed gates in your own corrector unit that you create.
+
 
 ## Delayed Logic Gates
 
