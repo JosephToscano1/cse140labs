@@ -4,9 +4,6 @@ layout: katex
 nav_order: 6
 ---
 
-{: .warning}
-This lab is unfinished, and subject to change without warning!
-
 # Carry Look-Ahead 2421 Adder and Hazard Free Designs
 {: .no_toc}
 
