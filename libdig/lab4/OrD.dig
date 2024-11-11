@@ -32,7 +32,7 @@
       <elementAttributes>
         <entry>
           <string>generic</string>
-          <string>initD := 3;
+          <string>initD := 2;
 riseD := 1;
 this.delayTime = initD + (riseD * args.inputCount);</string>
         </entry>
