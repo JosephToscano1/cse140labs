@@ -185,7 +185,6 @@ $$
 > 
 > As a final step, you need to derive the new CLA equations [(5)](#eq:5)-[(11)](#eq:11) with the alternative sum and carry equations.
 > You will be responsible for obtaining the equations through similar steps used in the derivation of [(5)](#eq:5)-[(11)](#eq:11) and constructing a 4-bit CLA adder with the alternative adder equations instead of the standard ones.
-> You will also need to update the equations of the single-bit half adder.
 > Since the initial equations for the conventional form in Equations [(3)-(4)](#eq:3), and the equations in [(16)-(17)](#eq:16) are so similar, except for the interchange of the operations, you should find it quite straightforward to derive the alternative CLA block formulations.
 
 These new equations you have derived for equations [(5)-(8)](#eq:5) are implemented by another block called the ***Look-Ahead*** block.

@@ -54,7 +54,7 @@ For example, to use 3 inputs, you would fill in the field with:
 inputCount := 3;
 ```
 
-Please do not input any numbers that are less than 2 or greater than 8 (we cannot guarantee your circuit working if you use numbers outside of these bounds)
+Please do not input any numbers that are less than 2 or greater than 4 (we cannot guarantee your circuit working if you use numbers outside of these bounds).
 
 These gates all have a predefined delay used to help calculate the performance.
 For more information, please refer to the [Performance Analysis](https://cse140l.github.io/fa24-labs/docs/lab4/part3/delay) page.
