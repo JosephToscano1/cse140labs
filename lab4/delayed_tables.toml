@@ -14,14 +14,14 @@
 [d1]
 a = 10 # This is d1.a
 b = 11
-c = 0
-d = 0
+c = 14
+d = 14
 
 [d2]
 a = 17
-b = 0
-c = 0
-d = 0
+b = 18
+c = 21
+d = 22
 
 # The first value corresponds to single-level
 # The second value corresponds to two-level
